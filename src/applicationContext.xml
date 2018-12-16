@@ -18,7 +18,7 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 		<property name="jdbcUrl" value="jdbc:mysql:///crm_ssh"></property>
 		<property name="user" value="root"></property>
-		<property name="password" value="123321tqb"></property>
+		<property name="password" value=""></property>
 	</bean>
 	
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
