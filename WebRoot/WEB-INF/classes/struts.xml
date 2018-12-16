@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="user" extends="struts-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="loginSuccess">/index.jsp</result>
+			<result name="loginFalse">/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="customer" extends="struts-default" namespace="/">
+		<action name="customer_*" class="customerAction" method="{1}">
+			<result name="toAddPage">/jsp/customer/add.jsp</result>
+			<result name="add" type="redirectAction">customer_list?currentPage=1</result>
+			<result name="list">/jsp/customer/list.jsp</result>
+			<result name="delete" type="redirectAction">customer_list?currentPage=1</result>
+			<result name="toEditPage">/jsp/customer/edit.jsp</result>
+			<result name="edit" type="redirectAction">customer_list?currentPage=1</result>
+			<!-- <result name="page" type="redirectAction">customer_list</result> -->
+			<result name="query">/jsp/customer/list.jsp</result>
+			<result name="toMoreCondition">/jsp/customer/select.jsp</result>
+			<result name="moreCondition">/jsp/customer/select.jsp</result>
+			<result name="customerLevelStatistics">/jsp/customer/levelSta.jsp</result>
+			<result name="customerSourceStatistics">/jsp/customer/sourceSta.jsp</result>
+		</action>
+	</package>
+	
+	<package name="linkman" extends="struts-default" namespace="/">
+		<action name="linkman_*" class="linkManAction" method="{1}">
+			<result name="toAddPage">/jsp/linkman/add.jsp</result>
+			<result name="add" type="redirectAction">linkman_list</result>
+			<result name="input">/jsp/error.jsp</result>
+			<result name="list">/jsp/linkman/list.jsp</result>
+			<result name="toEditPage">/jsp/linkman/edit.jsp</result>
+			<result name="delete" type="redirectAction">linkman_list</result>
+			<result name="edit" type="redirectAction">linkman_list</result>
+			<result name="toMoreCondition">/jsp/linkman/select.jsp</result>
+			<result name="moreCondition">/jsp/linkman/select.jsp</result>
+		</action>
+	</package>
+	
+	<package name="visit" extends="struts-default" namespace="/">
+		<action name="visit_*" class="visitAction" method="{1}">
+			<result name="toAddPage">/jsp/visit/add.jsp</result>
+			<result name="add" type="redirectAction">visit_list</result>
+			<result name="list">/jsp/visit/list.jsp</result>
+			<result name="toEditPage">/jsp/visit/edit.jsp</result>
+			<result name="edit" type="redirectAction">visit_list</result>
+			<result name="delete" type="redirectAction">visit_list</result>
+			
+		</action>
+	</package>
+</struts>

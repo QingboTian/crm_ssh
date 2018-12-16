@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 可选配置 -->
+		<!-- 输出底层sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 输出底层格式化sql语句 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 若不存在该表，则创建，若存在，则更新 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 允许使用方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	
+		<!-- 加载表单项配置文件 -->
+		<mapping resource="tqb/user/entity/User.hbm.xml"/>
+		<mapping resource="tqb/customer/entity/Customer.hbm.xml"/>
+		<mapping resource="tqb/linkman/entity/LinkMan.hbm.xml"/>
+		<mapping resource="tqb/visit/entity/Visit.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="tqb.linkman.entity.LinkMan" table="t_linkman">
+		<id name="lkm_id" column="lkm_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="lkm_name" column="lkm_name"></property>
+		<property name="lkm_gender" column="lkm_gender"></property>
+		<property name="lkm_phone" column="lkm_phone"></property>
+		
+		<many-to-one name="customer" class="tqb.customer.entity.Customer" column="cid"></many-to-one>
+	</class>
+</hibernate-mapping>
